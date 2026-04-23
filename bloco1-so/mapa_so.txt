@@ -7,25 +7,25 @@
 # explicando a função do diretório com suas próprias palavras.
 
 /proc
-  
+  Diretório dos arquivos.
 
 /proc/cpuinfo
-  
+  Arquivo que contém informações da CPU.
 
 /proc/meminfo
-  
+  Arquivo que contém informações da memória RAM.
 
 /proc/uptime
-  
+  Arquivo que contém informação do tempo do sistema.
 
 /bin
-
+  Diretório de executáveis do sistema.
   
 /dev
-  
+  Diretório de arquivos de hardware.
 
 /etc
-  
+  Diretório de arquivos de configuração de softwares do sistema.
 
 
 # PARTE B — Questão de reflexão
@@ -33,4 +33,4 @@
 # e que rotinas de dispositivo traduziam comandos.
 # Em qual diretório do Linux você reconhece essa função?
 
-Resposta:
+Resposta: /dev.
