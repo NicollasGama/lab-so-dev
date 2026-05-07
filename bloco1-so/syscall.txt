@@ -10,25 +10,25 @@
 Saída filtrada:
 
 # Anote:
-#   Argumento 1 (file descriptor):
-#   O que está sendo escrito:
-#   Valor de retorno:
+#   Argumento 1 (file descriptor):1
+#   O que está sendo escrito:"ola\n"
+#   Valor de retorno:4ola
 
-fd:
-conteúdo:
-retorno:
+fd:1
+conteúdo:"ola\n"
+retorno:4ola
 
 
 # PARTE B — Programa C com write() direto
 
 # Cole aqui o código de syscall_direto.c que você escreveu:
 
-[código-fonte]
+[bench.py  hello.c  syscall_direto.c]
 
 
 # Cole aqui a linha write(...) da saída de strace -o strace.txt ./syscall_direto:
 
-[saída do strace]
+[write(1, "Modo usuario -> kernel via write"..., 35) = 35]
 
 
 # PARTE C — Questões de síntese
@@ -37,7 +37,7 @@ retorno:
 #    Com base no que o strace revelou, explique com suas palavras como um programa
 #    de usuário consegue fazer I/O sem executar instruções privilegiadas diretamente.
 
-Resposta 1:
+Resposta 1: O strace faz acontecer essa comunicação entre o programa e o kernel por meio do syscalle e depois recupera o controle. 
 
 
 # 2. Na apresentação sobre a genealogia do software, vimos que os programas de canal
@@ -45,4 +45,4 @@ Resposta 1:
 #    dispositivos, sem intervenção direta da CPU principal. Qual elemento do sistema 
 #    operacional moderno herda esse papel? 
 
-Resposta 2:
+Resposta 2: O DMA, que transfere dados sem interromper a CPU.
