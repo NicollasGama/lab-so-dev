@@ -5,8 +5,8 @@
 # FASE 1 — Pré-processador (gcc -E)
 # Quantas linhas tem soma.i? O que o pré-processador expandiu?
 
-Linhas em soma.i:
-Observação:
+Linhas em soma.i:752
+Observação: O pré-processador expande diretivas/cabeçalhos.
 
 
 # FASE 2 — Assembly (gcc -S)
@@ -14,11 +14,16 @@ Observação:
 # interessantes.
 
 Trecho de soma.s:
+.file   "soma.c"
+.align  1
+.globl  soma
+.type   soma, @function
+.string "%d\n"
 
 # FASE 3 — Código objeto (gcc -c)
 # Cole a saída de: file soma.o
 
-file soma.o:
+file soma.o: ELF 64-bit LSB relocatable, UCB RISC-V, version 1 (SYSV), not stripped
 
 # Cole a saída de: nm soma.o
 
@@ -27,13 +32,13 @@ nm soma.o:
 # Quais símbolos aparecem? O que significa o marcador "U" ao lado
 # de printf?
 
-Observação sobre nm:
+Observação sobre nm:r, T, U, T. É a representação do printf, não está definida.
 
 
 # FASE 4 — Ligação (gcc soma.o -o soma)
 # O que mudou após a ligação? Execute ./soma e registre a saída.
 
-Saída de ./soma:
+Saída de ./soma:12.
 
 
 # QUESTÕES DE SÍNTESE
@@ -42,10 +47,10 @@ Saída de ./soma:
 # Na saída do nm soma.o, printf aparece marcado como U (Undefined). Qual é o papel do 
 # ligador em relação a esse símbolo? 
 
-Resposta 1:
+Resposta 1:Buscar os símbolos indefinidos na biblioteca (libc).
 
 
 # 2. Você gerou três arquivos intermediários: soma.i (pré-processado), soma.s (assembly),
 #    soma.o (objeto). Qual desses é o que o computador realmente executa?
 
-Resposta 2:
+Resposta 2:soma.o.
