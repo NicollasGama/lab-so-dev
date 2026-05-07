@@ -1,47 +1,48 @@
 # Atividade 3 — Modo usuário × modo kernel
 # Preencha este arquivo durante a atividade.
-# ─────────────────────────────────────────────────────
+# ───────────────────────────────────────────
 
 # PARTE A — Observar syscalls com strace
 
 # Cole abaixo a linha relevante da saída de:
 # strace echo "ola" 2>&1 | grep write
 
-Saída filtrada: write(1, "ola\n", 4ola
+Saída filtrada:
 
 # Anote:
-#   Argumento 1 (file descriptor):1
-#   O que está sendo escrito: "ola\n"
-#   Valor de retorno: =4
+#   Argumento 1 (file descriptor):
+#   O que está sendo escrito:
+#   Valor de retorno:
 
-fd:1
-conteúdo: "ola\n"
-retorno: =4
+fd:
+conteúdo:
+retorno:
 
 
 # PARTE B — Programa C com write() direto
 
 # Cole aqui o código de syscall_direto.c que você escreveu:
 
-[grep write strace.txt]
+[código-fonte]
 
 
-# Cole aqui a linha write(...) da saída de strace ./syscall_direto:
+# Cole aqui a linha write(...) da saída de strace -o strace.txt ./syscall_direto:
 
-[write(1, "Modo usuario -> kernel via write"..., 35) = 35]
+[saída do strace]
 
 
 # PARTE C — Questões de síntese
 
-# 1. A apresentação afirma que "instruções de I/O são privilegiadas".
-#    Como um programa de usuário consegue fazer I/O sem executar
-#    instruções privilegiadas diretamente? (mínimo 2 frases)
+# 1. A apresentação mostrou que "instruções de I/O são privilegiadas". 
+#    Com base no que o strace revelou, explique com suas palavras como um programa
+#    de usuário consegue fazer I/O sem executar instruções privilegiadas diretamente.
 
-Resposta 1: O syscall faz com que o programa entegue o controle ao kernel, e o kernel executa a operação privilegiada. O DMA faz uma relação direta com o dispositivo e memória.
+Resposta 1:
 
 
-# 2. Compare write(fd, buffer, tamanho) com o "programa de canal"
-#    da apresentação: o que os dois têm em comum em termos de
-#    responsabilidades?
+# 2. Na apresentação sobre a genealogia do software, vimos que os programas de canal
+#    eram responsáveis por intermediar a transferência de dados entre a memória e os
+#    dispositivos, sem intervenção direta da CPU principal. Qual elemento do sistema 
+#    operacional moderno herda esse papel? 
 
-Resposta 2: Escrever uma saída no console.
+Resposta 2:
