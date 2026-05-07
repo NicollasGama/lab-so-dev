@@ -28,6 +28,10 @@ file soma.o: ELF 64-bit LSB relocatable, UCB RISC-V, version 1 (SYSV), not strip
 # Cole a saída de: nm soma.o
 
 nm soma.o:
+0000000000000000 r .LC0
+0000000000000028 T main
+                 U printf
+0000000000000000 T soma
 
 # Quais símbolos aparecem? O que significa o marcador "U" ao lado
 # de printf?
