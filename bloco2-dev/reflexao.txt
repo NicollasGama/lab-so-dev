@@ -8,7 +8,7 @@
 # // ASSIGN SYS004,TAPE para associar um job a um dispositivo.
 # No shell moderno, qual mecanismo cumpre papel equivalente?
 
-Resposta:
+Resposta: O redirecionamento (>,<). Também há o pipe (|), que cria um canal de dados entre os programas.
 
 # ─────────────────────────────────────────────────────
 
@@ -19,7 +19,7 @@ Resposta:
 #    papel? Como o make sabe que não precisa recompilar um arquivo
 #    que não mudou?
 
-Resposta 1:
+Resposta 1: Timestamps. Se o alvo é mais recente que todas as suas dependências, não faz nada.
 
 
 # 2. O monitor unificava "supervisor, carregador e rotinas de I/O
